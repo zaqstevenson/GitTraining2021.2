@@ -1,22 +1,32 @@
 <template>
     <lightning-card>
-        <div class="slds-p-horizontal_small">
+        <div class="slds-var-p-horizontal_small">
             <lightning-input 
                 type="number" 
                 name="invoiceBeforeTax" 
-                label="Net Invoice total" 
+                label="Net Invoice total (monthly)" 
                 formatter="currency" 
                 step="0.01"
-                placeholder="Enter your invoice net value here (without VAT)">
+                placeholder="Enter your monthly invoice net value here (without VAT)"
+                onchange={handleInputInvoice}>
             </lightning-input>
             <lightning-input 
                 type="number" 
                 name="salaryBeforeTax" 
-                label="Salary before taxes" 
+                label="Salary before taxes (monthly)" 
                 formatter="currency" 
                 step="0.01"
-                placeholder="Enter your salary as on the employment contract">
+                placeholder="Enter your monthly salary as on the employment contract"
+                onchange={handleInputSalary}>
             </lightning-input>
+            <p class="slds-var-p-horizontal_medium">Your Net monthly income will be:</p>
+            <p class="slds-var-p-horizontal_medium">
+                <lightning-formatted-number 
+                    value={netTakeHome} 
+                    format-style="currency" 
+                    currency-code="PLN">
+                </lightning-formatted-number>
+            </p>
         </div>
     </lightning-card>
 </template>
