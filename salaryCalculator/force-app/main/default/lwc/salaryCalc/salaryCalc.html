@@ -19,10 +19,81 @@
                 placeholder="Enter your monthly salary as on the employment contract"
                 onchange={handleInputSalary}>
             </lightning-input>
-            <p class="slds-var-p-horizontal_medium">Your Net monthly income will be:</p>
-            <p class="slds-var-p-horizontal_medium">
+            <lightning-input 
+                type="number" 
+                name="kwotaWolna" 
+                label="Kwota wolna od podatku" 
+                formatter="currency" 
+                step="0.01"
+                placeholder="Wprowadz kwote wolna"
+                onchange={handleInputSalary}>
+            </lightning-input>
+            <lightning-input 
+                type="toggle" 
+                name="workingWhereLiving" 
+                label="Are you living in the same location as your work?" 
+                onchange={handleWorkingWhereLiving}
+                checked>
+            </lightning-input>            
+            <lightning-input 
+                type="toggle" 
+                name="linearTax" 
+                label="Is your tax linear?" 
+                onchange={handleLinearTax}
+                checked>
+            </lightning-input>            
+            <p>Skladka emerytalna:</p>
+            <p>
                 <lightning-formatted-number 
-                    value={netTakeHome} 
+                    value={skladkaEmerytalna} 
+                    format-style="currency" 
+                    currency-code="PLN">
+                </lightning-formatted-number>
+            </p>            
+            <p>Skladka rentowa:</p>
+            <p>
+                <lightning-formatted-number 
+                    value={skladkaRentowa} 
+                    format-style="currency" 
+                    currency-code="PLN">
+                </lightning-formatted-number>
+            </p>            
+            <p>Skladka chorobowa:</p>
+            <p>
+                <lightning-formatted-number 
+                    value={skladkaChorobowa} 
+                    format-style="currency" 
+                    currency-code="PLN">
+                </lightning-formatted-number>
+            </p>            
+            <p>Skladka zdrowotna (2020):</p>
+            <p>
+                <lightning-formatted-number 
+                    value={skladkaZdrowotna2020} 
+                    format-style="currency" 
+                    currency-code="PLN">
+                </lightning-formatted-number>
+            </p>            
+            <p>Skladka zdrowotna (2021):</p>
+            <p>
+                <lightning-formatted-number 
+                    value={skladkaZdrowotna2021} 
+                    format-style="currency" 
+                    currency-code="PLN">
+                </lightning-formatted-number>
+            </p>            
+            <p>Your Net monthly income will be (2020):</p>
+            <p>
+                <lightning-formatted-number 
+                    value={netTakeHome2020} 
+                    format-style="currency" 
+                    currency-code="PLN">
+                </lightning-formatted-number>
+            </p>            
+            <p>Your Net monthly income will be (2021):</p>
+            <p>
+                <lightning-formatted-number 
+                    value={netTakeHome2021} 
                     format-style="currency" 
                     currency-code="PLN">
                 </lightning-formatted-number>
