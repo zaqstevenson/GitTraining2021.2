@@ -12,6 +12,15 @@
             </lightning-input>
             <lightning-input 
                 type="number" 
+                name="invoiceCosts" 
+                label="Costs total (monthly)" 
+                formatter="currency" 
+                step="0.01"
+                placeholder="Enter your monthly costs net value here (without VAT)"
+                onchange={handleInputCosts}>
+            </lightning-input>
+            <lightning-input 
+                type="number" 
                 name="salaryBeforeTax" 
                 label="Salary before taxes (monthly)" 
                 formatter="currency" 
@@ -27,6 +36,15 @@
                 step="0.01"
                 placeholder="Wprowadz kwote wolna"
                 onchange={handleInputSalary}>
+            </lightning-input>
+            <lightning-input 
+                type="number" 
+                name="sredniePrzecietneZarobki" 
+                label="Srednie Przecietne Zarobki" 
+                formatter="currency" 
+                step="0.01"
+                placeholder="Wprowadz średnie Przecietne Zarobki (podstawa wylizcenia do ZUS)"
+                onchange={handleSrednieZarobki}>
             </lightning-input>
             <lightning-input 
                 type="toggle" 
@@ -82,7 +100,7 @@
                     currency-code="PLN">
                 </lightning-formatted-number>
             </p>            
-            <p>Your Net monthly income will be (2020):</p>
+            <p>Your Net annual income will be (2020):</p>
             <p>
                 <lightning-formatted-number 
                     value={netTakeHome2020} 
@@ -90,7 +108,7 @@
                     currency-code="PLN">
                 </lightning-formatted-number>
             </p>            
-            <p>Your Net monthly income will be (2021):</p>
+            <p>Your Net annual income will be (2021):</p>
             <p>
                 <lightning-formatted-number 
                     value={netTakeHome2021} 
