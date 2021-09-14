@@ -1,1 +1,1 @@
-# GitTraining2021.2
+# Git & LWC Training2021.2
